@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Manage Yaowarat101</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/laout.css" rel="stylesheet">
+
+
+  <!-- data -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.css" />
+
+</head>
+
+<body>
+
+
+
+  <!-- Collapsible element -->
+  <div class="collapse" id="collapseExample">
+
+  </div>
+  <!-- / Collapsible element -->
+  <!-- Grid row -->
+
+  <div class="row">
+
+    <div style="background-color : #221e1f; width : 100%; " align="right" class="user column-3">
+
+      <a class="nav-link" href="/">
+        ออกจากระบบ <i class="fas fa-sign-out-alt"></i>
+      </a>
+
+
+
+    </div>
+
+    <div class="column-3" style="background-color: red;" align="center">
+      <a class="navbar-brand" routerLink="/home">
+        <img class="img-fluid" src="https://yaowarat101.net/image/logo_yellow.png" alt="Logo"
+          style="width:300px; margin-top :30px ; margin-bottom :30px ;">
+      </a>
+    </div>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark column-3"
+      style="background-color: #212121 !important; padding: 0 ; padding-left: 20px">
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseExample"
+        aria-controls="collapseExample" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="collapseExample" align="center">
+
+        <!-- Links -->
+        <ul class="nav navbar-nav m-auto" style="font-size: 1.5em;text-shadow: 0px 0px 3px rgba(0,0,0,0.3);">
+
+
+          <div class="ddd">
+            <a class="dbtn" href="/dashboard.html">เสนอราคา <span class="sr-only">(current)</span></a>
+          </div>
+
+          <div class="ddd">
+            <a class="dbtn" href="#">การจัดการ <span class="sr-only">(current)</span></a>
+          </div>
+
+          <div class="ddd">
+            <a class="dbtn" href="/customer.html">ข้อมูลลูกค้า <span class="sr-only">(current)</span></a>
+          </div>
+
+          <div class="ddd">
+            <a class="dbtn" href="/user.html">จัดการพนักงาน <span class="sr-only">(current)</span></a>
+          </div>
+          <!-- Dropdown -->
+
+        </ul>
+        <!-- Links -->
+      </div>
+      <!-- Collapsible content -->
+
+    </nav>
+
+    <!-- Grid column -->
+    <div class="column-2 px-3">
+
+
+      <li class="p-2 border-bottom li-1"><a href="/dashboard.html">
+          <i class="fas fa-file-signature cyan-text fa-2x"></i> เสนอราคา </a></li>
+      <li class="p-2 border-bottom li-1"><a href="#"><i class="fas fa-file-alt fa-2x pr-3"></i> การจัดการ </a>
+      </li>
+      <li class="p-2 border-bottom li-1"><a href="/customer.html"><i class="fas fa-clipboard-list fa-2x pr-3"></i>
+          ข้อมูลลูกค้า
+        </a></li>
+      <li class="p-2 border-bottom li-1"><a href="/user.html"><i class="fas fa-users-cog fa-2x"></i>
+          จัดการพนักงาน
+        </a></li>
+      <!-- <div class="d-flex flex-column p-2 ml-2">
+                        <div class="p-2 border-bottom">Flex item 1</div>
+                        <div class="p-2 border-bottom">Flex item 2</div>
+                        <div class="p-2 border-bottom">Flex item 3</div>
+                      </div> -->
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+
+
+    <!-- start -->
+    <div class="column-1 border px-5 py-5">
+
+      <div class="container">
+
+        <div class="row border mb-5 p-5">
+
+          <div class="w-100">
+            <form class="needs-validation" action="https://yaowarat101.net/managequote" method="POST" novalidate>
+
+              <div class="row pb-5 justify-content-md-center">
+                <h4 class="title">แก้ไขข้อเสนอราคาทองใบที่</h4>
+                <h4 class="title" id="idquote"></h4>
+              </div>
+
+              <div class="form-row pb-4 justify-content-end">
+                <div class="col-md-4 mb-3 text-right">
+                  <label id="date"></label>
+                  <input type="text" class="form-control" id="validationCustom01" name="namestaff"
+                    placeholder="ชื่อผู้เสนอ" value="" required>
+                  <label for="validationCustom01">ผู้เสนอราคา</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">ชื่อลูกค้า</label>
+                  <input type="text" class="form-control" id="validationCustom01" name="namebuyer"
+                    placeholder="ชื่อ - นามสกุล" value="" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom02">ติดต่อ</label>
+                  <input type="text" class="form-control" id="validationCustom02" name="telbuyer" placeholder="Tel."
+                    value="" maxlength="10" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustomUsername">Email Address</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="validationCustomUsername" name="emailbuyer"
+                      placeholder="email.com" value="" aria-describedby="inputGroupPrepend" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12">
+                  <label>ที่อยู่ลูกค้า</label>
+                  <textarea rows="5" class="form-control" name="addressbuyer" placeholder="..." value=""></textarea>
+                </div>
+              </div>
+              <div class="form-row pt-3">
+                <div class="col-md-3">
+                  <label>ประเภท</label>
+                  <select class="form-control" name="tpyeproduct">
+                    <option value="" selected disabled>กรุณาเลือก</option>
+                    <option value="แหวน">แหวน</option>
+                    <option value="สร้อยคอ">สร้อยคอ</option>
+                    <option value="กำไล">กำไล</option>
+                    <option value="สร้อยข้อมือ">สร้อยข้อมือ</option>
+                    <option value="ต่างหู">ต่างหู</option>
+                    <option value="อื่น">อื่นๆ</option>
+                  </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom01">เปอร์เซ็นทอง</label>
+                  <input type="text" class="form-control" id="validationCustom01" name="percengold" placeholder="%"
+                    value="" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom04">น้ำหนัก (บาท)</label>
+                  <input type="text" class="form-control" id="validationCustom04" name="weightproduct"
+                    placeholder="0. บาท" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom04">ขนาด (นิ้ว)</label>
+                  <input type="text" class="form-control" id="validationCustom04" name="lengthproduct"
+                    placeholder="0. บาท" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">ชื่อทอง</label>
+                  <input type="text" class="form-control" id="validationCustom01" name="nameproduct" placeholder="Name"
+                    value="" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">ราคา</label>
+                  <input type="text" class="form-control" id="validationCustom01" name="priceproduct"
+                    placeholder="0. -บาท" value="" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom04">จำนวน</label>
+                  <input type="number" class="form-control" id="validationCustom04" name="amountproduct" placeholder="0"
+                    min="1" value="1" required>
+                </div>
+              </div>
+
+              <div class="form-row justify-content-end">
+                <div class="col-md-6 mt-5">
+                  <div class="col-md-12 text-center">
+
+                    <p class=""><i class="fa fa-map-marker"></i> บริษัท ห้างทองเยาวราช จำกัด 182-184
+                      ถนนเทวาภิบาล ต.ในเมือง อ.เมืองร้อยเอ็ด 45000 </p>
+
+                    <p class=""><i class="fa fa-phone"></i> 043513917, 043511329, 089-4245999 </p>
+
+                    <p class="">yaowarat101@yahoo.com</p>
+
+
+                    <p class="" style="font-size:10px;">© Copyright 2017 YAOWARAT101.NET</p>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-row justify-content-end">
+                    <div class="col-md-10 mb-3">
+                      <label for="validationCustom01">มัดจำ</label>
+                      <input type="text" class="form-control" id="validationCustom01" name="depositproduct"
+                        placeholder="0. -บาท" value="" required>
+                    </div>
+                  </div>
+                  <div class="form-row justify-content-end">
+                    <div class="col-md-10 mb-3">
+                      <label for="validationCustom01">ค้างจ่าย</label>
+                      <input type="text" class="form-control" id="validationCustom01" name="residual"
+                        placeholder="0. -บาท" value="" disabled required>
+                    </div>
+                  </div>
+                  <div class="form-row justify-content-end">
+                    <div class="col-md-10 mb-3">
+                      <label for="validationCustom01">ทั้งหมดรวม</label>
+                      <input type="text" class="form-control" id="validationCustom01" name="allprice"
+                        placeholder="0. -บาท" value="" disabled required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="form-row justify-content-end">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">มัดจำ</label>
+                  <input type="text" class="form-control" id="validationCustom01" name="name" placeholder="Name"
+                    value="" required>
+                </div>
+              </div>
+              <div class="form-row justify-content-end">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">ค้างจ่าย</label>
+                  <input type="text" class="form-control" id="validationCustom01" name="name" placeholder="Name"
+                    value="" required>
+                </div>
+              </div>
+              <div class="form-row justify-content-end">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">ทั้งหมดรวม</label>
+                  <input type="text" class="form-control" id="validationCustom01" name="name" placeholder="Name"
+                    value="" required>
+                </div>
+              </div> -->
+
+              <button class="btn btn-default mt-5 float-right" type="submit" id="add_user">แก้ไข <i
+                  class="fas fa-magic ml-1"></i></button>
+              <button class="btn btn-danger mt-5 float-right" type="button" data-toggle="modal"
+                data-target="#basicExampleModal">ลบทิ้ง <i class="far fa-trash-alt"></i></button>
+              
+              <button class="btn btn-dark mt-5 float-right" type="button" id="cancel_user">ยกเลิก <i
+                  class="fas fa-times"></i></button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- <div class="header">
+          <h4 class="title">LIST STAFF</h4>
+        </div>
+        <div class="row border p-5">
+          <div class="w-100">
+            <table id="tableStaff" class="table table-striped table-bordered" style="width:100%">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th>Telephone</th>
+                  <th>Gender</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+    <!-- end -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            คุณลบข้อเสนอราคานี้ทิ้งจะไม่สามารถนำกลับมาได้อีก?
+            คุณต้องการลบข้อเสนอราคาใบนี้ทิ้งใช้หรือไม่?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+            <button type="button" class="btn btn-primary" id="delete_quote">ยืนยันการลบทิ้ง</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+
+    <footer class="column-3">
+
+      <div class="container-fluid bg-primary mt-4" style="background-color: #212121 !important" align="center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <img src="https://yaowarat101.net/image/logo_yellow.png" alt="Logo" style="width:200px; margin :30px;">
+
+              <p class="text-white"><i class="fa fa-map-marker"></i> บริษัท ห้างทองเยาวราช จำกัด 182-184
+                ถนนเทวาภิบาล ต.ในเมือง อ.เมืองร้อยเอ็ด 45000 </p>
+
+              <p class="text-white"><i class="fa fa-phone"></i> 043513917, 043511329, 089-4245999 </p>
+
+              <p class="text-white">yaowarat101@yahoo.com</p>
+
+              <a target="_blank" class="bg-circle"
+                style="background-color: #4267b2; width: 50px; height : 50px; margin-right: 5px;"
+                href="https://www.facebook.com/YaowaratJewelry/">
+                <i class="fa fa-facebook-f text-light" aria-hidden="true "></i>
+              </a>
+
+              <a target="_blank" class="bg-circle"
+                style="background-color: #00b900; width: 50px; height : 50px; margin-bottom: 30px; margin-right: 5px;"
+                href="https://line.me/R/ti/p/%40yaowarat">
+                <i class="fa fa-fw fa fa-comments text-light" aria-hidden="true "></i>
+              </a>
+
+              <a target="_blank" class="bg-circle"
+                style="background-color: #3f729b; width: 50px; height : 50px; margin-bottom: 30px;"
+                href="https://www.instagram.com/yaowarat_roiet/">
+                <i class="fa fa-fw fa fa-instagram text-light" aria-hidden="true "></i>
+              </a>
+
+              <p class="text-white" style="font-size:10px;">© Copyright 2017 YAOWARAT101.NET</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="fb-customerchat" page_id="352547691854493">
+      </div>
+
+    </footer>
+
+
+  </div>
+  <!-- Grid row -->
+  <!-- /Start your project here-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
+  <!-- data -->
+  <!-- <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.js"></script>
+  <!-- <script src="js/data.js"></script> -->
+  <script src="js/edit-quote.js"></script>
+</body>
+
+</html>
