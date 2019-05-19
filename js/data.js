@@ -8,7 +8,7 @@ requestStaff.open('GET', 'https://yaowarat101.net/manageuser', true);
 request.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
-    console.log(data);
+    // console.log(data);
 
 
     $(document).ready(function () {
@@ -44,7 +44,7 @@ request.onload = function () {
 requestStaff.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
-    console.log(data);
+    // console.log(data);
 
 
     $(document).ready(function () {
@@ -62,7 +62,7 @@ requestStaff.onload = function () {
                     data: null,
                     className: "dt-center",
                     mRender:  function (data, type, row) {
-                        return '<a class="btn btn-secondary btn-sm" href="#' + " " + '" style="margin: 2px; width: 100px;" >EDIT <i class="fas fa-pencil-alt"></i></a>' + '<a class="btn btn-light-green btn-sm" href="/viewuser.html#' + data.User_Id + '" style="margin: 2px; width: 100px;">ViEW <i class="fas fa-eye"></i></a>'
+                        return '<a class="btn btn-secondary btn-sm" href="/edituser.html#' + data.User_Id + '" style="margin: 2px; width: 100px;" >EDIT <i class="fas fa-pencil-alt"></i></a>' + '<a class="btn btn-light-green btn-sm" href="/viewuser.html#' + data.User_Id + '" style="margin: 2px; width: 100px;">ViEW <i class="fas fa-eye"></i></a>'
                     },width: "20%" 
                 },
             ]

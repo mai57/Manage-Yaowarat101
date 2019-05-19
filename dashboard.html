@@ -38,7 +38,7 @@
 
     <div style="background-color : #221e1f; width : 100%; " align="right" class="user column-3">
 
-      <a class="nav-link" href="/">
+      <a class="nav-link" href="#" id="logout">
         ออกจากระบบ <i class="fas fa-sign-out-alt"></i>
       </a>
 
@@ -82,7 +82,7 @@
           </div>
 
           <div class="ddd">
-            <a class="dbtn" href="/user.html">จัดการพนักงาน <span class="sr-only">(current)</span></a>
+            <a class="dbtn dp-none " href="/user.html" id="user_role">จัดการพนักงาน <span class="sr-only">(current)</span></a>
           </div>
           <!-- Dropdown -->
 
@@ -104,7 +104,7 @@
       <li class="p-2 border-bottom li-1"><a href="/customer.html"><i class="fas fa-clipboard-list fa-2x pr-3"></i>
           ข้อมูลลูกค้า
         </a></li>
-      <li class="p-2 border-bottom li-1"><a href="/user.html"><i class="fas fa-users-cog fa-2x"></i>
+      <li class="p-2 border-bottom li-1 dp-none" id="user_role" ><a href="/user.html"><i class="fas fa-users-cog fa-2x"></i>
           จัดการพนักงาน
         </a></li>
       <!-- <div class="d-flex flex-column p-2 ml-2">
@@ -137,7 +137,7 @@
                 <div class="col-md-4 mb-3 text-right">
                   <label id="date"></label>
                   <input type="text" class="form-control" id="validationCustom01" name="namestaff"
-                    placeholder="ชื่อผู้เสนอ" value="" required>
+                    placeholder="ชื่อผู้เสนอ" value="" disabled required>
                   <label for="validationCustom01">ผู้เสนอราคา</label>
                 </div>
               </div>
@@ -382,6 +382,7 @@
     src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.js"></script>
   <!-- <script src="js/data.js"></script> -->
   <script src="js/add-quote.js"></script>
+  <script src="js/datastorage.js"></script>
 </body>
 
 </html>

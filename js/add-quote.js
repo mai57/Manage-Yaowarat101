@@ -7,7 +7,10 @@ var output = (day < 10 ? '0' : '') + day + '/' +
     (month < 10 ? '0' : '') + month + '/' +
     d.getFullYear();
 
-console.log(output);
+// console.log(output);
+
+var user_anme = localStorage.getItem("user_name");
+$("input[name=namestaff]").val(user_anme);
 $("label[id=date]").text(output);
 
 $(document).ready(function () {
@@ -32,6 +35,8 @@ $(document).ready(function () {
             'Product_price': $('input[name=priceproduct]').val(),
             'Product_amount': $('input[name=amountproduct]').val(),
             'Product_deposit': $('input[name=depositproduct]').val(),
+            'Date_edit': output,
+            'Name_edit': $('input[name=namestaff]').val(),
         };
         console.log(formData);
 

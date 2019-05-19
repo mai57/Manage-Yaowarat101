@@ -29,6 +29,14 @@ $(document).ready(function () {
         data.forEach(val => {
             if(val.User_Email == formData.User_Email && val.User_Password == formData.User_Password){
                 checkEmail = true;
+                if (typeof(Storage) !== "undefined") {
+                    // Store
+                    localStorage.setItem("user_id", val.User_Id);
+                    localStorage.setItem("user_name", val.User_Name);
+                    // console.log();
+                    
+                  }
+                
                 window.location.href = '/dashboard.html';
             }else{
                 console.log("No");

@@ -772,6 +772,16 @@ app.get('/manageuser', function (req, res) {
     });
 })
 
+app.get('/manageuser/:User_Id', function (req, res) {
+    $query = 'SELECT * from manage_user WHERE User_Id = ' + req.params.User_Id;
+    poolConnection.query($query, function (err, rows, fields) {
+        if (err) {
+            console.log(err);
+        }
+        res.json(rows);
+    });
+})
+
 app.post('/manageuser', function (req, res) {
     $u_Email = req.body.User_Email.toString();
     $u_Password = req.body.User_Password.toString();
@@ -790,11 +800,38 @@ app.post('/manageuser', function (req, res) {
     });
 })
 
-app.get('/manageuser/:User_Id', function (req, res) {
-    $query = 'SELECT * from manage_user WHERE User_Id = ' + req.params.User_Id;
+app.put('/manageuser', function (req, res) {
+    $u_Id = req.body.User_Id.toString();
+	$u_Email = req.body.User_Email.toString();
+    $u_Password = req.body.User_Password.toString();
+    $u_Name = req.body.User_Name.toString();
+    $u_Tel = req.body.User_Tel.toString();
+    $u_Gender = req.body.User_Gender.toString();
+    $u_Address = req.body.User_Address.toString();
+    $u_Role = req.body.User_Role.toString();
+	
+	
+
+    $query = 'UPDATE manage_user SET User_Role = "' + $u_Role + '", User_Email = "' + $u_Email + '", User_Password = "' + $u_Password + '", User_Name = "' + $u_Name + '", User_Tel = "' + $u_Tel + '", User_Gender = "' + $u_Gender + '", User_Address = "' + $u_Address + '" WHERE User_Id = ' + $u_Id
     poolConnection.query($query, function (err, rows, fields) {
         if (err) {
-            console.log(err);
+            console.log(err)
+
+        }
+        res.json(rows);
+    });
+})
+
+app.post('/deleteuser/:User_Id', function (req, res) {
+    $u_Id = req.params.User_Id.toString();
+    $query = 'DELETE FROM manage_user WHERE User_Id = ' + $u_Id
+
+
+    // console.log($query)
+    poolConnection.query($query, function (err, rows, fields) {
+        if (err) {
+            console.log(err)
+
         }
         res.json(rows);
     });
@@ -829,9 +866,11 @@ app.post('/managequote', function (req, res) {
     $p_Price = req.body.Product_price.toString();
     $p_Amount = req.body.Product_amount.toString();
     $p_Deposit = req.body.Product_deposit.toString();
+	$d_edit = req.body.Date_edit.toString();
+    $n_edit = req.body.Name_edit.toString();
     // $all_Prices = req.body.all_Prices.toString();
 
-    $query = 'INSERT INTO manage_quote (Quote_date, Quote_staff, Buyer_name, Buyer_tel, Buyer_email, Buyer_address, Product_tpye, Product_percen, Product_weight, Product_length, Product_name, Product_price, Product_amount, Product_deposit) VALUES ("' + $q_date + '","' + $q_Name + '","' + $b_Name + '","' + $b_Tel + '","' + $b_Email + '","' + $b_Address + '","' + $p_Type + '","' + $p_Percent + '","' + $p_Weight + '","' + $p_Length + '","' + $p_Name + '","' + $p_Price + '","' + $p_Amount + '","' + $p_Deposit + '")';
+    $query = 'INSERT INTO manage_quote (Quote_date, Quote_staff, Buyer_name, Buyer_tel, Buyer_email, Buyer_address, Product_tpye, Product_percen, Product_weight, Product_length, Product_name, Product_price, Product_amount, Product_deposit, Date_edit, Name_edit) VALUES ("' + $q_date + '","' + $q_Name + '","' + $b_Name + '","' + $b_Tel + '","' + $b_Email + '","' + $b_Address + '","' + $p_Type + '","' + $p_Percent + '","' + $p_Weight + '","' + $p_Length + '","' + $p_Name + '","' + $p_Price + '","' + $p_Amount + '","' + $p_Deposit + '","' + $d_edit + '","' + $n_edit + '")';
     poolConnection.query($query, function (err, rows, fields) {
         if (err) {
             console.log(err)
@@ -868,11 +907,13 @@ app.put('/managequote', function (req, res) {
     $p_Price = req.body.Product_price.toString();
     $p_Amount = req.body.Product_amount.toString();
     $p_Deposit = req.body.Product_deposit.toString();
+	$d_edit = req.body.Date_edit.toString();
+    $n_edit = req.body.Name_edit.toString();
     // $all_Prices = req.body.all_Prices.toString();
 	
 	
 
-    $query = 'UPDATE manage_quote SET Quote_date = "' + $q_date + '", Quote_staff = "' + $q_Name + '", Buyer_name = "' + $b_Name + '", Buyer_tel = "' + $b_Tel + '", Buyer_email = "' + $b_Email + '", Buyer_address = "' + $b_Address + '", Product_tpye = "' + $p_Type + '", Product_percen = "' + $p_Percent + '", Product_weight = "' + $p_Weight + '", Product_length = "' + $p_Length + '", Product_name = "' + $p_Name + '", Product_price = "' + $p_Price + '", Product_amount = "' + $p_Amount + '", Product_deposit = "' + $p_Deposit + '" WHERE Quote_id = ' + $q_id
+    $query = 'UPDATE manage_quote SET Quote_date = "' + $q_date + '", Quote_staff = "' + $q_Name + '", Buyer_name = "' + $b_Name + '", Buyer_tel = "' + $b_Tel + '", Buyer_email = "' + $b_Email + '", Buyer_address = "' + $b_Address + '", Product_tpye = "' + $p_Type + '", Product_percen = "' + $p_Percent + '", Product_weight = "' + $p_Weight + '", Product_length = "' + $p_Length + '", Product_name = "' + $p_Name + '", Product_price = "' + $p_Price + '", Product_amount = "' + $p_Amount + '", Product_deposit = "' + $p_Deposit + '", Date_edit = "' + $d_edit + '", Name_edit = "' + $n_edit + '" WHERE Quote_id = ' + $q_id
     poolConnection.query($query, function (err, rows, fields) {
         if (err) {
             console.log(err)
@@ -881,6 +922,7 @@ app.put('/managequote', function (req, res) {
         res.json(rows);
     });
 })
+
 
 
 /////////////////////// delete Quote by Quote id

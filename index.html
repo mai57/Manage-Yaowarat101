@@ -14,6 +14,7 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/laout.css" rel="stylesheet">
 
   <!-- data -->
   <link rel="stylesheet" type="text/css"
@@ -21,39 +22,70 @@
 
 </head>
 
-<body>
+<body style="background-color: azure;">
 
 
-    <div class="container mt-5" align="center">
-    
-        <div class="col-md-6">
-          <div class="card">
-            <form class="border border-light p-5">
+  <div class="container mt-5">
 
-              <p class="h4 mb-4 text-center">Sign in</p>
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
 
-              <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" name="email" placeholder="E-mail">
+        <form class="border-light p-5">
 
-              <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" name="password" placeholder="Password">
+          <p class="h4 mb-4 text-center">Sign in</p>
 
-              <div class="d-flex justify-content-between">
-                <div>
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
-                  </div>
-                </div>
-                
+          <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" name="email" placeholder="E-mail">
+
+          <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" name="password"
+            placeholder="Password">
+
+          <div class="d-flex justify-content-between">
+            <div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
               </div>
+            </div>
 
-              <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
-
-              
-            </form>
           </div>
+
+          <button class="btn btn-danger btn-block my-4" type="submit">Sign in</button>
+
+
+        </form>
+
+      </div>
+
+      <div class="col-lg-5 column-in">
+        <div class="text-center" style="padding-top: 20%;">
+          <img src="https://yaowarat101.net/image/logo_red.png" class="rounded w-75" alt="...">
         </div>
+      </div>
 
     </div>
+
+
+
+  </div>
+
+
+
+
+  <footer class="page-footer" style="position:fixed; width: 100%;">
+
+    <div class="container-fluid bg-primary mt-4" style="background-color: #212121 !important;" align="center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <img src="https://yaowarat101.net/image/logo_yellow.png" alt="Logo" style="width:200px; margin :30px;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
 
 
 
@@ -75,7 +107,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
   <script type="text/javascript"
     src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.js"></script>
-    <script src="js/checklogin.js"></script>
+  <script src="js/checklogin.js"></script>
 </body>
 
 </html>

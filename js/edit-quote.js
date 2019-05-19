@@ -1,3 +1,14 @@
+var d = new Date();
+
+var month = d.getMonth() + 1;
+var day = d.getDate();
+
+var output = (day < 10 ? '0' : '') + day + '/' +
+    (month < 10 ? '0' : '') + month + '/' +
+    d.getFullYear();
+
+// console.log(output);
+var user_anme = localStorage.getItem("user_name");
 
 var datahash = window.location.hash.substr(1);
 
@@ -32,6 +43,7 @@ request.onload = function () {
     $('input[name=depositproduct]').val(data[0].Product_deposit);
     $("input[name=residual]").val((data[0].Product_price * data[0].Product_amount) - data[0].Product_deposit);
     $("input[name=allprice]").val(data[0].Product_price * data[0].Product_amount);
+    $("label[id=quote_edit]").text("** แก้ไขล่าสุด " + data[0].Date_edit + " โดย " + data[0].Name_edit);
 }
 
 request.send();
@@ -104,6 +116,8 @@ $(document).ready(function () {
             'Product_price': $('input[name=priceproduct]').val(),
             'Product_amount': $('input[name=amountproduct]').val(),
             'Product_deposit': $('input[name=depositproduct]').val(),
+            'Date_edit': output,
+            'Name_edit': user_anme,
         };
         // console.log(formData);
 
@@ -111,7 +125,7 @@ $(document).ready(function () {
             .then(data => {
                 // console.log(data);
                 alert("บันทึกข้อมูล เสร็จสิ้น");
-                window.location.assign("/customer.html");
+                window.location.assign("/manage.html");
             }) // Result from the `response.json()` call
             .catch(error => {
                 console.error(error)
@@ -143,7 +157,7 @@ $("button[id=delete_quote]").click(function () {
     var deletequote = new XMLHttpRequest();
     deletequote.open('POST', 'https://yaowarat101.net/deletequote/' + deletedata, true);
     deletequote.send();
-    window.location.assign("/customer.html");
+    window.location.assign("/manage.html");
 });
 
 $("button[id=cancel_user]").click(function () {

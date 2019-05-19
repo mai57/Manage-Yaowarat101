@@ -37,7 +37,7 @@
     <div class="row">
 
         <div style="background-color : #221e1f; width : 100%; " align="right" class="user column-3">
-            <a class="nav-link" href="/">
+            <a class="nav-link" href="#" id="logout">
                 ออกจากระบบ <i class="fas fa-sign-out-alt"></i>
             </a>
         </div>
@@ -78,7 +78,8 @@
                     </div>
 
                     <div class="ddd">
-                        <a class="dbtn" href="#">จัดการพนักงาน <span class="sr-only">(current)</span></a>
+                        <a class="dbtn dp-none" href="#" id="user_role">จัดการพนักงาน <span
+                                class="sr-only">(current)</span></a>
                     </div>
                     <!-- Dropdown -->
 
@@ -99,7 +100,8 @@
             <li class="p-2 border-bottom li-1"><a href="/customer.html"><i class="fas fa-clipboard-list fa-2x pr-3"></i>
                     ข้อมูลลูกค้า
                 </a></li>
-            <li class="p-2 border-bottom li-1"><a href="#"><i class="fas fa-users-cog cyan-text  fa-2x"></i>
+            <li class="p-2 border-bottom li-1 dp-none" id="user_role"><a href="#"><i
+                        class="fas fa-users-cog cyan-text  fa-2x"></i>
                     จัดการพนักงาน
                 </a></li>
         </div>
@@ -183,7 +185,7 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    
+
                                     <th>Telephone</th>
                                     <th>Gender</th>
                                     <th></th>
@@ -266,6 +268,7 @@
         src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-colvis-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.js"></script>
     <script src="js/dataview.js"></script>
     <script src="js/add-user.js"></script>
+    <script src="js/datastorage.js"></script>
 </body>
 
 </html>

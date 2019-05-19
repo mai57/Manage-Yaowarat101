@@ -8,7 +8,7 @@ requestStaff.open('GET', 'https://yaowarat101.net/manageuser', true);
 request.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
-    console.log(data);
+    // console.log(data);
 
 
     $(document).ready(function () {
@@ -55,7 +55,7 @@ request.onload = function () {
 requestStaff.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
-    console.log(data);
+    // console.log(data);
 
 
     $(document).ready(function () {
