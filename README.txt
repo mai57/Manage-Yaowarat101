@@ -2,6 +2,20 @@ Material Design for Bootstrap
 
 Version: MDB Free 4.8.0
 
+-----------------------------------------------------------
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+1.git clone https://github.com/mai57/Manage-Yaowarat101.git
+
+2.Terminal npm install in folder   -->  for install node js.
+
+3.select folder node serve.js
+
+4.open url http://localhost:3002 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------------------
+
 Documentation:
 https://mdbootstrap.com/
 
