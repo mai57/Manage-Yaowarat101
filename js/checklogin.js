@@ -31,8 +31,10 @@ $(document).ready(function () {
                 checkEmail = true;
                 if (typeof(Storage) !== "undefined") {
                     // Store
-                    localStorage.setItem("user_id", val.User_Id);
-                    localStorage.setItem("user_name", val.User_Name);
+                    Cookies.set('user_id', val.User_Id);
+                    Cookies.set('user_name', val.User_Name);
+                    // localStorage.setItem("user_id", val.User_Id);
+                    // localStorage.setItem("user_name", val.User_Name);
                     // console.log();
                     
                   }

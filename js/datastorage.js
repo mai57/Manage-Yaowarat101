@@ -1,7 +1,7 @@
-console.log(localStorage.getItem("user_id"));
-var user_id = localStorage.getItem("user_id");
+// console.log(Cookies.get('user_id'));
+var user_id = Cookies.get('user_id');
 
-if(user_id == null || undefined){
+if (user_id == null || undefined) {
     alert("โปรดเข้าสู่ระบบเพื่อจะดำเนินการต่อ / Please login to continue")
     window.location.href = '/';
 }
@@ -16,18 +16,20 @@ requeststatus.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
     // console.log(data[0])
-    if(data[0].User_Role == "admin") {
+    if (data[0].User_Role == "admin") {
         $("li[id=user_role], a[id=user_role], div[id=user_role]").removeClass("dp-none");
     }
-    
+
 }
 
 requeststatus.send();
 
-$(document).ready(function(){
-    $("a[id=logout]").click(function(){
-      localStorage.removeItem("user_id");
-      localStorage.removeItem("user_name");
-      window.location.href = '/';
+$(document).ready(function () {
+    $("a[id=logout]").click(function () {
+        Cookies.remove('user_id');
+        Cookies.remove('user_name');
+        // localStorage.removeItem("user_id");
+        // localStorage.removeItem("user_name");
+        window.location.href = '/';
     });
-  });
+});

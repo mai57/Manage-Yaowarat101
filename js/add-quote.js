@@ -9,7 +9,7 @@ var output = (day < 10 ? '0' : '') + day + '/' +
 
 // console.log(output);
 
-var user_anme = localStorage.getItem("user_name");
+var user_anme = Cookies.get('user_name');
 $("input[name=namestaff]").val(user_anme);
 $("label[id=date]").text(output);
 

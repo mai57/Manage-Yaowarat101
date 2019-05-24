@@ -16,6 +16,8 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/laout.css" rel="stylesheet">
 
+    <!-- cookie -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
     <!-- data -->
     <link rel="stylesheet" type="text/css"
@@ -39,7 +41,7 @@
         <div style="background-color : #221e1f; width : 100%; " align="right" class="user column-3">
             <a class="nav-link" href="#" id="logout">
                 ออกจากระบบ <i class="fas fa-sign-out-alt"></i>
-              </a>
+            </a>
         </div>
 
         <div class="column-3" style="background-color: red" align="center">
@@ -78,7 +80,8 @@
                     </div>
 
                     <div class="ddd">
-                        <a class="dbtn dp-none" href="/user.html" id="user_role">จัดการพนักงาน <span class="sr-only">(current)</span></a>
+                        <a class="dbtn dp-none" href="/user.html" id="user_role">จัดการพนักงาน <span
+                                class="sr-only">(current)</span></a>
                     </div>
                     <!-- Dropdown -->
 
@@ -99,7 +102,8 @@
             <li class="p-2 border-bottom li-1"><a href="/customer.html"><i class="fas fa-clipboard-list fa-2x pr-3"></i>
                     ข้อมูลลูกค้า
                 </a></li>
-            <li class="p-2 border-bottom li-1 dp-none" id="user_role"><a href="/user.html"><i class="fas fa-users-cog fa-2x"></i>
+            <li class="p-2 border-bottom li-1 dp-none" id="user_role"><a href="/user.html"><i
+                        class="fas fa-users-cog fa-2x"></i>
                     จัดการพนักงาน
                 </a></li>
         </div>
