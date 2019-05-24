@@ -1,4 +1,4 @@
-// console.log(localStorage.getItem("user_id"));
+console.log(localStorage.getItem("user_id"));
 var user_id = localStorage.getItem("user_id");
 
 if(user_id == null || undefined){
